@@ -5,6 +5,9 @@ import java.nio.charset.StandardCharsets;
 
 public class Util {
 
+    /**
+     * Return contents of resource named "classname.txt" as text
+     */
     public static String inputAsString(Class<?> callingClass) {
         String dayName = callingClass.getSimpleName().toLowerCase();
         try {
