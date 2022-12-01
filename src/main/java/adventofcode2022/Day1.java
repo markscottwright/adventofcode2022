@@ -7,8 +7,9 @@ import java.util.stream.LongStream;
 
 public class Day1 {
     public static void main(String[] args) {
-        System.out.println("Day 1 part 1: " + getBiggestIndividualTotal(inputAsString("day1")));
-        System.out.println("Day 1 part 2: " + getBiggestThreeTotal(inputAsString("day1")));
+        String input = inputAsString("day1");
+        System.out.println("Day 1 part 1: " + getBiggestIndividualTotal(input));
+        System.out.println("Day 1 part 2: " + getBiggestThreeTotal(input));
     }
 
     public static String inputAsString(String dayName) {
@@ -34,7 +35,8 @@ public class Day1 {
     public static long getBiggestThreeTotal(String input) {
         long[] elfCalories = elfCaloriesStream(input).toArray();
         Arrays.sort(elfCalories);
-        long part2 = elfCalories[elfCalories.length-1] + elfCalories[elfCalories.length-2] + elfCalories[elfCalories.length-3];
+        long part2 = elfCalories[elfCalories.length - 1] + elfCalories[elfCalories.length - 2]
+                + elfCalories[elfCalories.length - 3];
         return part2;
     }
 }
