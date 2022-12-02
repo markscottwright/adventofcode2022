@@ -1,7 +1,12 @@
 package adventofcode2022;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.util.stream.Stream;
 
 public class Util {
 
@@ -17,6 +22,12 @@ public class Util {
             e.printStackTrace();
             throw new RuntimeException(e);
         }
+    }
+
+    public static Stream<String> inputAsLinesStream(Class<?> callingClass) {
+        String dayName = callingClass.getSimpleName().toLowerCase();
+        InputStream inputString = callingClass.getResourceAsStream("/" + dayName + ".txt");
+        return new BufferedReader(new InputStreamReader(inputString)).lines();
     }
 
 }
