@@ -1,8 +1,8 @@
 package adventofcode2022;
 
 import java.io.BufferedReader;
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 import java.util.stream.Stream;
@@ -23,10 +23,12 @@ public class Util {
         }
     }
 
+    /**
+     * Return lines in resource named "classname.txt" as stream of strings
+     */
     public static Stream<String> inputAsLinesStream(Class<?> callingClass) {
-        String dayName = callingClass.getSimpleName().toLowerCase();
-        InputStream inputString = callingClass.getResourceAsStream("/" + dayName + ".txt");
-        return new BufferedReader(new InputStreamReader(inputString)).lines();
+        return new BufferedReader(
+                new InputStreamReader(new ByteArrayInputStream(inputAsString(callingClass).getBytes()))).lines();
     }
 
 }
