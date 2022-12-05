@@ -3,8 +3,6 @@ package adventofcode2022;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import adventofcode2022.Day5.CrateStacks;
-
 public class Day5 {
     static class Instruction {
         @Override
